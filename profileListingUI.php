@@ -59,6 +59,23 @@ if (!class_exists('profileListingUI')) {
 		}
 
 		private function get_custom_fields_table_html($post_id) {
+			$skills = get_the_terms($post_id, 'skills');
+			if ($skills && !is_wp_error($skills)) {
+				$skills_list = [];
+				foreach ($skills as $skill) {
+					$skills_list[] = $skill->name;
+				}
+				$profile_skills = implode(', ', $skills_list);
+			}
+
+			$education = get_the_terms($post_id, 'education');
+			if ($education && !is_wp_error($education)) {
+				$education_list = [];
+				foreach ($education as $edu) {
+					$education_list[] = $edu->name;
+				}
+				$profile_education = implode(', ', $education_list);
+			}
 			return '<table class="custom-fields-table">
                 <tr>
                     <th>Age</th>
@@ -83,6 +100,14 @@ if (!class_exists('profileListingUI')) {
                 <tr>
                     <th>Ratings</th>
                     <td>' . $this->generateStarRating((get_post_meta($post_id, 'ratings', true))) . '</td>
+                </tr>
+                <tr>
+                    <th>Skills</th>
+                    <td>' . $profile_skills . '</td>
+                </tr>
+                <tr>
+                    <th>Education</th>
+                    <td>' . $profile_education . '</td>
                 </tr>
             </table>';
 		}
