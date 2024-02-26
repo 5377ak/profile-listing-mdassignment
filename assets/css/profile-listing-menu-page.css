@@ -1,52 +1,52 @@
 /* Wrap container */
 .profile-listing-menu-page {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Heading */
 .profile-listing-menu-page h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
+	margin-top: 0;
+	margin-bottom: 20px;
 }
 
 /* Paragraph */
 .profile-listing-menu-page p {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 /* Form label */
 .profile-listing-menu-page form label {
-    display: block;
-    margin-bottom: 5px;
+	display: block;
+	margin-bottom: 5px;
 }
 
 /* Form select */
 .profile-listing-menu-page form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
 
 /* Form submit button */
 .profile-listing-menu-page form input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #0073aa;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 10px 20px;
+	background-color: #0073aa;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 /* Form submit button on hover */
 .profile-listing-menu-page form input[type="submit"]:hover {
-    background-color: #005e8c;
+	background-color: #005e8c;
 }

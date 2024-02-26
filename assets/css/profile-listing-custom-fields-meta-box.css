@@ -1,25 +1,25 @@
 /* Apply styles to the container divs */
 .profile-custom-fields-container div {
-    margin-bottom: 10px; /* Add spacing between each input container */
+	margin-bottom: 10px; /* Add spacing between each input container */
 }
 
 /* Apply styles to the labels */
 .profile-custom-fields-container label {
-    display: inline-block; /* Ensure labels behave as blocks */
-    width: 200px; /* Set a fixed width for the labels */
-    text-align: right; /* Align label text to the right */
-    margin-right: 10px; /* Add spacing between labels and input fields */
+	display: inline-block; /* Ensure labels behave as blocks */
+	width: 200px; /* Set a fixed width for the labels */
+	text-align: right; /* Align label text to the right */
+	margin-right: 10px; /* Add spacing between labels and input fields */
 }
 
 /* Apply styles to the input fields */
 .profile-custom-fields-container input {
-    width: 250px; /* Set a fixed width for the input fields */
-    box-sizing: border-box; /* Include padding and border in the width */
-    padding: 5px; /* Add padding for better visual appearance */
+	width: 250px; /* Set a fixed width for the input fields */
+	box-sizing: border-box; /* Include padding and border in the width */
+	padding: 5px; /* Add padding for better visual appearance */
 }
 
 .profile-custom-fields-container .required-field::after {
-    content: "\002A"; /* Display asterisk after required input fields */
-    color: red; /* Customize the color of the asterisk */
-    margin-left: 5px; /* Add spacing between the input field and the asterisk */
+	content: "\002A"; /* Display asterisk after required input fields */
+	color: red; /* Customize the color of the asterisk */
+	margin-left: 5px; /* Add spacing between the input field and the asterisk */
 }

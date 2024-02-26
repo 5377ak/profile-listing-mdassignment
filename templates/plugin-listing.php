@@ -1,17 +1,17 @@
 <?php
 if (!defined('ABSPATH')):
-    require_once '../prevent-direct-access.php';
+	require_once '../prevent-direct-access.php';
 endif;
 
 $unselected_start_image_url = plugins_url('assets/img/unselected-star.png', __DIR__);
 $skills = get_terms(array(
-    'taxonomy' => 'skills', // Taxonomy slug to retrieve terms from
-    'hide_empty' => false, // Getting non attached terms as well
-        ));
+	'taxonomy' => 'skills', // Taxonomy slug to retrieve terms from
+	'hide_empty' => false, // Getting non attached terms as well
+		));
 $education = get_terms(array(
-    'taxonomy' => 'education', // Taxonomy slug to retrieve terms from
-    'hide_empty' => false, // Getting non attached terms as well
-        ));
+	'taxonomy' => 'education', // Taxonomy slug to retrieve terms from
+	'hide_empty' => false, // Getting non attached terms as well
+		));
 ?>
 <div class="profile-listing-container">
     <form class="ajax-form" id="profile-listing-search-form" method="post">
@@ -35,28 +35,28 @@ $education = get_terms(array(
                         <label for="skills"><?php esc_html_e('Skills:', 'profile-listing-mdassignment'); ?></label>
                         <select id="skills" name="skills[]" class="select2" multiple="multiple">
                             <option value="" disabled><?php esc_html_e('Select Skill', 'profile-listing-mdassignment'); ?></option>
-<?php
+							<?php
 // Loop through each Skill terms
-if (!empty($skills) && !is_wp_error($skills)) {
-    foreach ($skills as $term) {
-        echo '<option value = "' . $term->term_id . '">' . $term->name . '</option>';
-    }
-}
-?>
+							if (!empty($skills) && !is_wp_error($skills)) {
+								foreach ($skills as $term) {
+									echo '<option value = "' . $term->term_id . '">' . $term->name . '</option>';
+								}
+							}
+							?>
                         </select>
                     </div>
                     <div class="half-width">
                         <label for="education"><?php esc_html_e('Education:', 'profile-listing-mdassignment'); ?></label>
                         <select id="education" name="education[]" class="select2" multiple="multiple">
                             <option value="" disabled><?php esc_html_e('Select Education', 'profile-listing-mdassignment'); ?></option>
-<?php
+							<?php
 // Loop through each Eduation terms
-if (!empty($education) && !is_wp_error($education)) {
-    foreach ($education as $term) {
-        echo '<option value = "' . $term->term_id . '">' . $term->name . '</option>';
-    }
-}
-?>
+							if (!empty($education) && !is_wp_error($education)) {
+								foreach ($education as $term) {
+									echo '<option value = "' . $term->term_id . '">' . $term->name . '</option>';
+								}
+							}
+							?>
                         </select>
                     </div>
                 </div>
@@ -69,11 +69,11 @@ if (!empty($education) && !is_wp_error($education)) {
                     <div class="half-width">
                         <label for="selectedRating"><?php esc_html_e('Rating (minimum):', 'profile-listing-mdassignment'); ?></label>
                         <div class="star-rating" id="rating">
-<?php
-for ($i = 1; $i < 6; $i++) {
-    echo '<img src="' . esc_url($unselected_start_image_url) . '" alt="' . esc_attr__('Unselected Star', 'profile-listing-mdassignment') . '" class="star selected" data-value="' . esc_attr($i) . '">';
-}
-?>
+							<?php
+							for ($i = 1; $i < 6; $i++) {
+								echo '<img src="' . esc_url($unselected_start_image_url) . '" alt="' . esc_attr__('Unselected Star', 'profile-listing-mdassignment') . '" class="star selected" data-value="' . esc_attr($i) . '">';
+							}
+							?>
                         </div>
                         <input type="number" id="selectedRating" name="rating" value="5" class="hidden">
                     </div>
