@@ -71,6 +71,7 @@ if (!class_exists('profileListingCommonFeatures')) {
 			}
 
 			$profiles = get_posts($final_arguments);
+			wp_reset_postdata();
 
 			return count($profiles);
 		}

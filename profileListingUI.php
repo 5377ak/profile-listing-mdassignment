@@ -147,6 +147,7 @@ if (!class_exists('profileListingUI')) {
 			$args = $this->apply_sorting_and_searching_for_profiles($column_index, $sorting_direction, $length, $offset, $keyword, $apply_advance, $age, $rating, $jobs_completed, $years_experience, $skills, $education);
 
 			$profiles = get_posts($args);
+			wp_reset_postdata();
 
 			$data = array();
 
