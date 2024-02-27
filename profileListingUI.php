@@ -151,7 +151,7 @@ if (!class_exists('profileListingUI')) {
 			$data = array();
 
 			// Record number to send to datatables
-			$records_found = 0;
+			$records_found = $offset;
 
 			foreach ($profiles as $key => $profile) {
 				// Retrieve custom fields
@@ -180,6 +180,10 @@ if (!class_exists('profileListingUI')) {
 
 			// Getting the total number of publised profiles
 			$total_posts_exists = $this->get_total_published_profile_posts_count($keyword, $apply_advance, $age, $rating, $jobs_completed, $years_experience, $skills, $education);
+
+			if ($total_posts_exists < $records_found) {
+				$total_posts_exists = $records_found;
+			}
 
 			$result = array(
 				"draw" => $draw,

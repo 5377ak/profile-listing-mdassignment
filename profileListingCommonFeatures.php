@@ -61,6 +61,7 @@ if (!class_exists('profileListingCommonFeatures')) {
 				'post_type' => 'profile',
 				'post_status' => 'publish', // Only count published posts
 				'posts_per_page' => -1, // Retrieve all published posts
+				'fields' => 'ids', // Retrieve only ids
 			);
 
 			if (!empty($keyword) || $apply_advance == 1) {
@@ -69,9 +70,9 @@ if (!class_exists('profileListingCommonFeatures')) {
 				$final_arguments = $args;
 			}
 
-			$query = new WP_Query($final_arguments);
+			$profiles = get_posts($final_arguments);
 
-			return $query->found_posts;
+			return count($profiles);
 		}
 
 		// Method to get the profile by specific sorting and or searching
